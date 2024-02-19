@@ -48,5 +48,11 @@ public class StudentBUS {
     }
     public boolean deleteStudent(String studentID) {
         return studentDAO.deleteStudent(studentID);
-    } 
+    }
+
+    public String getLatestStudentId() {
+        var student = studentDAO.getLatestStudent();
+        return student.getStudentID();
+    }
+
 }

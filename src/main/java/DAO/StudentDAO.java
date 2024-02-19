@@ -19,17 +19,7 @@ public class StudentDAO extends DatabaseConnection {
             PreparedStatement pstm = conn.prepareStatement(sql);
             ResultSet rs = pstm.executeQuery();
             while (rs.next()) {
-                Student student = new Student();
-                student.setStudentID(rs.getString("Student_ID"));
-                student.setStudentName(rs.getString("Student_Name"));
-                student.setDateOfBirth(rs.getString("Date_Of_Birth"));
-                student.setGender(rs.getString("Gender"));
-                student.setPhone(rs.getString("Phone"));
-                student.setEmail(rs.getString("Email"));
-                student.setAddress(rs.getString("Address"));
-                student.setStatus(rs.getInt("Status"));
-                student.setImage(rs.getString("Image"));
-                student.setClassID(rs.getString("Class_ID"));
+                var student = createStudentByResultSet(rs);
                 studentList.add(student);
             }
             return studentList;
@@ -112,5 +102,36 @@ public class StudentDAO extends DatabaseConnection {
             System.out.println("Error: " + e.toString());
         }
         return false;
+    }
+
+    public Student getLatestStudent() {
+        open();
+        try {
+            String sql = "select top 1 * from [Student] order by Student_ID desc\n";
+            PreparedStatement pstm = conn.prepareStatement(sql);
+            ResultSet rs = pstm.executeQuery();
+            rs.next();
+            return createStudentByResultSet(rs);
+        } catch (SQLException ex) {
+            System.out.println("Lỗi");
+        } finally {
+            close();
+        }
+        return null;
+    }
+
+    private Student createStudentByResultSet(ResultSet rs) throws SQLException {
+        Student student = new Student();
+        student.setStudentID(rs.getString("Student_ID"));
+        student.setStudentName(rs.getString("Student_Name"));
+        student.setDateOfBirth(rs.getString("Date_Of_Birth"));
+        student.setGender(rs.getString("Gender"));
+        student.setPhone(rs.getString("Phone"));
+        student.setEmail(rs.getString("Email"));
+        student.setAddress(rs.getString("Address"));
+        student.setStatus(rs.getInt("Status"));
+        student.setImage(rs.getString("Image"));
+        student.setClassID(rs.getString("Class_ID"));
+        return student;
     }
 }

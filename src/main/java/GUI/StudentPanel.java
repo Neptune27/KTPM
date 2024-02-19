@@ -501,7 +501,11 @@ public class StudentPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_rdFemaleActionPerformed
 
     public void resetStudentForm() {
-        txtStudentID.setText("");
+        String currentId = studentBUS.getLatestStudentId();
+        var currentPosition = currentId.split("HS")[1];
+        var newPosition = Integer.parseInt(currentPosition) + 1;
+        var newId = "HS" + newPosition;
+        txtStudentID.setText(newId);
         txtStudentName.setText("");
         txtPhone.setText("");
         txtAddress.setText("");
