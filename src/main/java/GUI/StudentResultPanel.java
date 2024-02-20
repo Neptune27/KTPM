@@ -63,8 +63,21 @@ public class StudentResultPanel extends javax.swing.JPanel {
         loadDataStudentDisTable(uID);
         loadDataresultTable();
         LoadComboboxClass(uID);
-        String classID = comboboxClass.getSelectedItem().toString();
-        loadDataStudentTable(uID, classID);
+        addOptionToHKCBox();
+
+        var item = comboboxClass.getSelectedItem();
+        if (item != null) {
+            String classID = item.toString();
+            loadDataStudentTable(uID, classID, "1");
+        }
+
+    }
+
+    public void addOptionToHKCBox() {
+        var model = new DefaultComboBoxModel<String>();
+        model.addElement("1");
+        model.addElement("2");
+        cbboxMarkHK.setModel(model);
     }
 
     public void LoadComboboxClass(String uID) {
@@ -75,63 +88,68 @@ public class StudentResultPanel extends javax.swing.JPanel {
         comboboxClass.setModel(currentClassModel);
     }
 
-    public void loadDataStudentTable(String uID, String classID) {
+    public void loadDataStudentTable(String uID, String classID, String hk) {
         DefaultTableModel model = (DefaultTableModel) studentList.getModel();
         model.setRowCount(0); // xóa table 
         for (Student student : studentBUS.getStudentByClass(classID)) {
-            Object dataRow[] = new Object[8];
-            dataRow[0] = student.getStudentID();
-            dataRow[1] = student.getStudentName();
-            Mark mark = markBUS.getmarkbystdandteacher(student.getStudentID(), uID);
-            if (mark == null) {
+            var marks = markBUS.getMarksByStudentIdAndTeacherIdAndHK(student.getStudentID(), uID, Integer.parseInt(hk));
 
+            if (marks.isEmpty()) {
+                Object dataRow[] = new Object[8];
+                dataRow[0] = student.getStudentID();
+                dataRow[1] = student.getStudentName();
                 dataRow[2] = "";
                 dataRow[3] = "";
                 dataRow[4] = "";
                 dataRow[5] = "";
                 dataRow[6] = "";
                 dataRow[7] = "";
-            } else {
+                model.addRow(dataRow);
+            }
 
+            marks.forEach(mark -> {
+                Object dataRow[] = new Object[8];
+                dataRow[0] = student.getStudentID();
+                dataRow[1] = student.getStudentName();
                 dataRow[2] = mark.getMark_1();
                 dataRow[3] = mark.getMark_2();
                 dataRow[4] = mark.getMark_15();
                 dataRow[5] = mark.getMark_45();
                 dataRow[6] = mark.getMark_end();
                 dataRow[7] = mark.getMark_avg();
-            }
-            model.addRow(dataRow);
+
+                model.addRow(dataRow);
+            });
+
+
         }
 
     }
 
     public void loadDataStudentDisTable(String userID) {
-        Class class1 = new Class();
-        try {
-            class1 = classBUS.getClassByTeacherID(userID);
-        } catch (Exception e) {
-            System.out.println("Error: " + e.toString());
-        }
-        if(class1 == null) {
-            return;
-        }
+        var classes = classBUS.getClassesByTeacherId(userID);
+
         DefaultTableModel model = (DefaultTableModel) studentdisList.getModel();
-        model.setRowCount(0); // xóa table 
-        for (Student student : studentBUS.getStudentByClass(class1.getClassID())) {
-            Object dataRow[] = new Object[4];
-            dataRow[0] = student.getStudentID();
-            dataRow[1] = student.getStudentName();
-            StudentDis studentdis = studentdisBUS.getStudentDisByID(student.getStudentID());
-            if (studentdis == null) {
-                dataRow[2] = "";
-                dataRow[3] = "";
-            } else {
-                dataRow[2] = studentdis.getScore();
-                dataRow[3] = studentdis.getResult();
+        model.setRowCount(0); // xóa table
+
+        classes.forEach(class1 -> {
+            for (Student student : studentBUS.getStudentByClass(class1.getClassID())) {
+                Object dataRow[] = new Object[4];
+                dataRow[0] = student.getStudentID();
+                dataRow[1] = student.getStudentName();
+                StudentDis studentdis = studentdisBUS.getStudentDisByID(student.getStudentID());
+                if (studentdis == null) {
+                    dataRow[2] = "";
+                    dataRow[3] = "";
+                } else {
+                    dataRow[2] = studentdis.getScore();
+                    dataRow[3] = studentdis.getResult();
+                }
+                model.addRow(dataRow);
+                System.out.println(student.toString());
             }
-            model.addRow(dataRow);
-            System.out.println(student.toString());
-        }
+        });
+
     }
 
     public void loadDataresultTable() {
@@ -513,6 +531,8 @@ public class StudentResultPanel extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         comboboxClass = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
+        cbboxMarkHK = new javax.swing.JComboBox<>();
+        jLabel11 = new javax.swing.JLabel();
         studentPanel1 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -2409,7 +2429,7 @@ public class StudentResultPanel extends javax.swing.JPanel {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Danh sách học sinh"));
 
-        studentList.setModel(new DefaultTableModel(
+        studentList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null},
@@ -2445,7 +2465,7 @@ public class StudentResultPanel extends javax.swing.JPanel {
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Thao tác"));
 
-        btnShowEditDialog.setIcon(new ImageIcon(getClass().getResource("/GUI/Edit.png"))); // NOI18N
+        btnShowEditDialog.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Edit.png"))); // NOI18N
         btnShowEditDialog.setPreferredSize(new java.awt.Dimension(60, 60));
         btnShowEditDialog.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2453,7 +2473,7 @@ public class StudentResultPanel extends javax.swing.JPanel {
             }
         });
 
-        btnExportExcel.setIcon(new ImageIcon(getClass().getResource("/GUI/XLS.png"))); // NOI18N
+        btnExportExcel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/XLS.png"))); // NOI18N
         btnExportExcel.setPreferredSize(new java.awt.Dimension(60, 60));
         btnExportExcel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2492,18 +2512,24 @@ public class StudentResultPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel11.setText("Học Kỳ");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel3)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(comboboxClass, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cbboxMarkHK, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton1)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2512,7 +2538,9 @@ public class StudentResultPanel extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(comboboxClass, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
+                    .addComponent(jButton1)
+                    .addComponent(cbboxMarkHK, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel11))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -2547,7 +2575,7 @@ public class StudentResultPanel extends javax.swing.JPanel {
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Danh sách học sinh"));
 
-        studentdisList.setModel(new DefaultTableModel(
+        studentdisList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -2583,7 +2611,7 @@ public class StudentResultPanel extends javax.swing.JPanel {
 
         jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder("Thao tác"));
 
-        btnShowEditDisDialog.setIcon(new ImageIcon(getClass().getResource("/GUI/Edit.png"))); // NOI18N
+        btnShowEditDisDialog.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Edit.png"))); // NOI18N
         btnShowEditDisDialog.setPreferredSize(new java.awt.Dimension(70, 40));
         btnShowEditDisDialog.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2591,7 +2619,7 @@ public class StudentResultPanel extends javax.swing.JPanel {
             }
         });
 
-        btnExportExcelDis.setIcon(new ImageIcon(getClass().getResource("/GUI/XLS.png"))); // NOI18N
+        btnExportExcelDis.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/XLS.png"))); // NOI18N
         btnExportExcelDis.setPreferredSize(new java.awt.Dimension(60, 60));
         btnExportExcelDis.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2676,7 +2704,7 @@ public class StudentResultPanel extends javax.swing.JPanel {
 
         jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder("Danh sách học sinh"));
 
-        resultList.setModel(new DefaultTableModel(
+        resultList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
@@ -2707,7 +2735,7 @@ public class StudentResultPanel extends javax.swing.JPanel {
 
         jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder("Thao tác"));
 
-        btnExportExcelResult.setIcon(new ImageIcon(getClass().getResource("/GUI/XLS.png"))); // NOI18N
+        btnExportExcelResult.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/XLS.png"))); // NOI18N
         btnExportExcelResult.setPreferredSize(new java.awt.Dimension(70, 40));
         btnExportExcelResult.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -3442,15 +3470,18 @@ public class StudentResultPanel extends javax.swing.JPanel {
 
     private void btnAddMarkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddMarkActionPerformed
         Mark mark = getStudentModel(uID);
-        if (markBUS.getmarkbystdandteacher(mark.getStudentID(), uID) == null) {
-            if (markBUS.addMark(mark)) {
+        String hk = cbboxMarkHK.getSelectedItem().toString();
+        var intHK = Integer.parseInt(hk);
+
+        if (markBUS.getMarksByStudentIdAndTeacherIdAndHK(mark.getStudentID(), uID, intHK).isEmpty()) {
+            if (markBUS.addMarkWithHK(mark, intHK)) {
                 JOptionPane.showMessageDialog(this, "Cập nhật thành công");
             } else {
                 System.out.println(" Hayở đây");
                 JOptionPane.showMessageDialog(this, "Cập nhật thất bại");
             }
         } else {
-            if (markBUS.editmark(mark, uID)) {
+            if (markBUS.editMarkWithHK(mark, intHK)) {
                 JOptionPane.showMessageDialog(this, "Cập nhật thành công");
             } else {
                 System.out.println("ở đây");
@@ -3458,7 +3489,7 @@ public class StudentResultPanel extends javax.swing.JPanel {
             }
         }
         String classID = comboboxClass.getSelectedItem().toString();
-        loadDataStudentTable(uID, classID);
+        loadDataStudentTable(uID, classID, hk);
         StudentDisDialog.setVisible(false);
     }//GEN-LAST:event_btnAddMarkActionPerformed
 
@@ -3598,7 +3629,8 @@ public class StudentResultPanel extends javax.swing.JPanel {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         String classID = comboboxClass.getSelectedItem().toString();
-        loadDataStudentTable(uID, classID);
+        String hk = cbboxMarkHK.getSelectedItem().toString();
+        loadDataStudentTable(uID, classID, hk);
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -3617,6 +3649,7 @@ public class StudentResultPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnExportExcelResult;
     private javax.swing.JButton btnShowEditDialog;
     private javax.swing.JButton btnShowEditDisDialog;
+    private javax.swing.JComboBox<String> cbboxMarkHK;
     private javax.swing.JCheckBox cbox;
     private javax.swing.JCheckBox cbox1;
     private javax.swing.JCheckBox cbox10;
@@ -3658,6 +3691,7 @@ public class StudentResultPanel extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> comboboxClass;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;

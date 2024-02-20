@@ -828,11 +828,11 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jPanel7" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Component id="jPanel6" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
-                          <Component id="jPanel7" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -867,8 +867,6 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="showAssignmentDialog" min="-2" pref="60" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="showEditAssignmentDialog" min="-2" pref="60" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="deleteAssignement" min="-2" pref="60" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="btnExportExcelTeacher1" min="-2" pref="60" max="-2" attributes="0"/>
@@ -881,7 +879,6 @@
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="deleteAssignement" min="-2" pref="60" max="-2" attributes="0"/>
-                              <Component id="showEditAssignmentDialog" min="-2" pref="60" max="-2" attributes="0"/>
                               <Component id="showAssignmentDialog" min="-2" pref="60" max="-2" attributes="0"/>
                               <Component id="btnExportExcelTeacher1" min="-2" pref="60" max="-2" attributes="0"/>
                           </Group>
@@ -900,13 +897,6 @@
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="showAssignmentDialogActionPerformed"/>
                   </Events>
-                </Component>
-                <Component class="javax.swing.JButton" name="showEditAssignmentDialog">
-                  <Properties>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/GUI/Edit.png"/>
-                    </Property>
-                  </Properties>
                 </Component>
                 <Component class="javax.swing.JButton" name="deleteAssignement">
                   <Properties>
@@ -952,7 +942,7 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jScrollPane2" pref="433" max="32767" attributes="0"/>
+                          <Component id="jScrollPane2" pref="429" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>

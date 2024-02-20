@@ -21,7 +21,8 @@ public class Student {
     private int status;
     private String image;
     private String classID;
-    
+    private int hk;
+
     public Student () {
         
     }
@@ -38,6 +39,7 @@ public class Student {
         this.image = image;
         this.classID = classID;
     }
+
 
     public String getStudentID() {
         return studentID;

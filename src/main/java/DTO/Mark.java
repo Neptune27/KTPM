@@ -20,11 +20,12 @@ public class Mark {
     private Float  Mark_45;
     private Float  Mark_end;
     private Float  Mark_avg;
+    private int hk;
     public Mark () {
         
     }
 
-    public Mark(String studentID, String studentName, String TeacherId, Float Mark_1, Float Mark_2, Float Mark_15, Float Mark_45, Float Mark_end, Float Mark_avg) {
+    public Mark(String studentID, String studentName, String TeacherId, Float Mark_1, Float Mark_2, Float Mark_15, Float Mark_45, Float Mark_end, Float Mark_avg, int hk) {
         this.studentID = studentID;
         this.studentName = studentName;
         this.TeacherId = TeacherId;
@@ -34,6 +35,16 @@ public class Mark {
         this.Mark_45 = Mark_45;
         this.Mark_end = Mark_end;
         this.Mark_avg = Mark_avg;
+        this.hk = hk;
+    }
+
+
+    public int getHk() {
+        return hk;
+    }
+
+    public void setHk(int hk) {
+        this.hk = hk;
     }
 
     public String getStudentID() {
@@ -107,11 +118,4 @@ public class Mark {
     public void setMark_avg(Float Mark_avg) {
         this.Mark_avg = Mark_avg;
     }
-
-    @Override
-    public String toString() {
-        return "Mark{" + "studentID=" + studentID + ", studentName=" + studentName + ", TeacherId=" + TeacherId + ", Mark_1=" + Mark_1 + ", Mark_2=" + Mark_2 + ", Mark_15=" + Mark_15 + ", Mark_45=" + Mark_45 + ", Mark_end=" + Mark_end + ", Mark_avg=" + Mark_avg + '}';
-    }
-    
 }
-

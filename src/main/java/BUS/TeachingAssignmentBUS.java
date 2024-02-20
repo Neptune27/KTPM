@@ -77,17 +77,12 @@ public class TeachingAssignmentBUS {
         }
     }
 
-    public boolean deleteTeachingAssignmentByID(String id) throws SQLException {
+    public Boolean deleteTeachingAssignmentByID(String id) throws SQLException {
         boolean isExist = teachingAssignmentDAO.checkTeachingAssignmentExistById(id);
         if (isExist) {
-            boolean isDeleted = teachingAssignmentDAO.deleteTeachingAssignmentByID(id);
-            if (isDeleted) {
-                return true;
-            } else {
-                return false;
-            }
+            return teachingAssignmentDAO.deleteTeachingAssignmentByID(id);
         } else {
-            return true;
+            return false;
         }
     }
 

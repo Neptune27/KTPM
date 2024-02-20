@@ -8,6 +8,7 @@ import DAO.MarkDAO;
 import DTO.Mark;
 import java.sql.PreparedStatement;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -25,8 +26,12 @@ public class MarkBUS {
         return markDAO.addMark(mark);
     }
 
-    public boolean editmark(Mark mark, String teacherID) {
-        return markDAO.editmark(mark, teacherID);
+    public boolean editmark(Mark mark) {
+        return markDAO.editmark(mark);
+    }
+
+    public boolean editMarkWithHK(Mark mark, int hk) {
+        return markDAO.editMarkWithHK(mark, hk);
     }
 
     public Mark getmarkbystdandteacher(String studentID, String teacherID) {
@@ -40,15 +45,13 @@ public class MarkBUS {
         }
         return null;
     }
-    
-    public boolean checkDuplicate(String studentID) {
 
-        for (Mark mark : markDAO.getAllMark()) {
-            if (mark.getStudentID().equals(studentID)) {
-                return true;
-            }
-        }
-        return false;
+    public List<Mark> getMarksByStudentIdAndTeacherIdAndHK(String studentID, String teacherID, int hk) {
+        return markDAO.getAllMark().stream()
+                .filter(m -> m.getStudentID().equals(studentID)
+                        && m.getTeacherId().equals(teacherID)
+                        && m.getHk() == hk)
+                .toList();
     }
 
     public ArrayList<Mark> getmarkbystudentID(String studentID) {
@@ -60,4 +63,8 @@ public class MarkBUS {
         }
         return markList;
     }
+
+    public boolean addMarkWithHK(Mark mark, int hk) {
+        return markDAO.addMarkWithHK(mark, hk);
     }
+}

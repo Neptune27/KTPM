@@ -7,6 +7,7 @@ package BUS;
 import DAO.ClassDAO;
 import DTO.Class;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ClassBUS {
 
@@ -15,16 +16,6 @@ public class ClassBUS {
 
     public ArrayList<Class> getAllClass() {
         return classDAO.getAllClass();
-    }
-
-    public ArrayList<Class> getAllCurrentClass(String teacherID) {
-        ArrayList<Class> classList = new ArrayList<Class>();
-        for (Class cl : classDAO.getAllClass()) {
-            if (cl.getTeacherID().equals(teacherID)) {
-                classList.add(cl);
-            }
-        }
-        return classList;
     }
 
     public boolean addClass(Class class1) {
@@ -72,6 +63,10 @@ public class ClassBUS {
         return null;
     }
 
+    public List<Class> getClassesByTeacherId(String teacherID) {
+        return classDAO.getAllClass().stream().filter(c -> c.getTeacherID().equals(teacherID)).toList();
+    }
+
     public ArrayList<Class> getClassFactor(String[] factor) {
         return classDAO.getClassFactor(factor);
     }
@@ -79,6 +74,4 @@ public class ClassBUS {
     public boolean updateQuantity(int count, String classID) {
         return classDAO.updateQuantity(count, classID);
     }
-    
- 
 }

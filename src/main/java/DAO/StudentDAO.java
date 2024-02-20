@@ -132,6 +132,7 @@ public class StudentDAO extends DatabaseConnection {
         student.setStatus(rs.getInt("Status"));
         student.setImage(rs.getString("Image"));
         student.setClassID(rs.getString("Class_ID"));
+        student.setClassID(rs.getString("Class_ID"));
         return student;
     }
 }

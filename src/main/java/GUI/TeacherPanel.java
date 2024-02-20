@@ -203,7 +203,6 @@ public class TeacherPanel extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         showAssignmentDialog = new javax.swing.JButton();
-        showEditAssignmentDialog = new javax.swing.JButton();
         deleteAssignement = new javax.swing.JButton();
         btnExportExcelTeacher1 = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
@@ -437,11 +436,11 @@ public class TeacherPanel extends javax.swing.JPanel {
         });
         jPanel12.add(btnEsc1);
 
-        comboboxTeacher.setModel(new DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboboxTeacher.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        comboboxClass.setModel(new DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboboxClass.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        comboboxSchoolYear.setModel(new DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboboxSchoolYear.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -510,28 +509,28 @@ public class TeacherPanel extends javax.swing.JPanel {
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Thao tác"));
 
-        btnShowTeacherDialog.setIcon(new ImageIcon(getClass().getResource("/GUI/Add.png"))); // NOI18N
+        btnShowTeacherDialog.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Add.png"))); // NOI18N
         btnShowTeacherDialog.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnShowTeacherDialogActionPerformed(evt);
             }
         });
 
-        btnShowEditTeacherDialog.setIcon(new ImageIcon(getClass().getResource("/GUI/Edit.png"))); // NOI18N
+        btnShowEditTeacherDialog.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Edit.png"))); // NOI18N
         btnShowEditTeacherDialog.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnShowEditTeacherDialogActionPerformed(evt);
             }
         });
 
-        btnDeleteTeacher.setIcon(new ImageIcon(getClass().getResource("/GUI/Remove.png"))); // NOI18N
+        btnDeleteTeacher.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Remove.png"))); // NOI18N
         btnDeleteTeacher.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteTeacherActionPerformed(evt);
             }
         });
 
-        btnExportExcelTeacher.setIcon(new ImageIcon(getClass().getResource("/GUI/XLS.png"))); // NOI18N
+        btnExportExcelTeacher.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/XLS.png"))); // NOI18N
         btnExportExcelTeacher.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnExportExcelTeacherActionPerformed(evt);
@@ -566,7 +565,7 @@ public class TeacherPanel extends javax.swing.JPanel {
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Danh sách giáo viên"));
 
-        teacherList.setModel(new DefaultTableModel(
+        teacherList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null},
@@ -629,23 +628,21 @@ public class TeacherPanel extends javax.swing.JPanel {
 
         jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder("Thao Tác"));
 
-        showAssignmentDialog.setIcon(new ImageIcon(getClass().getResource("/GUI/Add.png"))); // NOI18N
+        showAssignmentDialog.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Add.png"))); // NOI18N
         showAssignmentDialog.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 showAssignmentDialogActionPerformed(evt);
             }
         });
 
-        showEditAssignmentDialog.setIcon(new ImageIcon(getClass().getResource("/GUI/Edit.png"))); // NOI18N
-
-        deleteAssignement.setIcon(new ImageIcon(getClass().getResource("/GUI/Remove.png"))); // NOI18N
+        deleteAssignement.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Remove.png"))); // NOI18N
         deleteAssignement.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deleteAssignementActionPerformed(evt);
             }
         });
 
-        btnExportExcelTeacher1.setIcon(new ImageIcon(getClass().getResource("/GUI/XLS.png"))); // NOI18N
+        btnExportExcelTeacher1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/XLS.png"))); // NOI18N
         btnExportExcelTeacher1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnExportExcelTeacher1ActionPerformed(evt);
@@ -660,8 +657,6 @@ public class TeacherPanel extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(showAssignmentDialog, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(showEditAssignmentDialog, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
                 .addComponent(deleteAssignement, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnExportExcelTeacher1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -672,7 +667,6 @@ public class TeacherPanel extends javax.swing.JPanel {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(deleteAssignement, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(showEditAssignmentDialog, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(showAssignmentDialog, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnExportExcelTeacher1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -680,7 +674,7 @@ public class TeacherPanel extends javax.swing.JPanel {
 
         jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder("Danh sách giảng dạy"));
 
-        teachingAssignmentList.setModel(new DefaultTableModel(
+        teachingAssignmentList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -705,7 +699,7 @@ public class TeacherPanel extends javax.swing.JPanel {
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 433, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 429, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -716,10 +710,10 @@ public class TeacherPanel extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -937,14 +931,6 @@ public class TeacherPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnDeleteTeacherActionPerformed
 
-    private void showAssignmentDialogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showAssignmentDialogActionPerformed
-        // TODO add your handling code here:
-        AssignmentDialog.setLocationRelativeTo(null);
-        addAssignmentBtn.setVisible(true);
-        editAssignmentBtn.setVisible(false);
-        AssignmentDialog.setVisible(true);
-    }//GEN-LAST:event_showAssignmentDialogActionPerformed
-
     private void btnEsc1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEsc1ActionPerformed
         // TODO add your handling code here:
         AssignmentDialog.setVisible(false);
@@ -963,6 +949,11 @@ public class TeacherPanel extends javax.swing.JPanel {
         teachingAssignment.setSubjectID(subject.getSubjectID());
 
         return teachingAssignment;
+    }
+
+    public String getSelectedAssignmentId() {
+        var row = teachingAssignmentList.getSelectedRow();
+        return (String) teachingAssignmentList.getValueAt(row, 0);
     }
 
     private void addAssignmentBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addAssignmentBtnActionPerformed
@@ -1036,21 +1027,6 @@ public class TeacherPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnExportExcelTeacherActionPerformed
 
-    private void deleteAssignementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteAssignementActionPerformed
-        TeachingAssignment assignment = getAssignmentModel();
-        try {
-            if (tcBUS.deleteTeachingAssignmentByID(assignment.getId())) {
-                JOptionPane.showMessageDialog(this, "Xóa thành công");
-                loadDataTableAssignment();
-            } else {
-                JOptionPane.showMessageDialog(this, "Xóa thất bại");
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(TeacherPanel.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-    }//GEN-LAST:event_deleteAssignementActionPerformed
-
     private void btnExportExcelTeacher1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExportExcelTeacher1ActionPerformed
         // TODO add your handling code here:
         try {
@@ -1087,6 +1063,28 @@ public class TeacherPanel extends javax.swing.JPanel {
             u.printStackTrace();
         }
     }//GEN-LAST:event_btnExportExcelTeacher1ActionPerformed
+
+    private void deleteAssignementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteAssignementActionPerformed
+        String assignmentId = getSelectedAssignmentId();
+        try {
+            if (tcBUS.deleteTeachingAssignmentByID(assignmentId)) {
+                JOptionPane.showMessageDialog(this, "Xóa thành công");
+                loadDataTableAssignment();
+            } else {
+                JOptionPane.showMessageDialog(this, "Xóa thất bại");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(TeacherPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_deleteAssignementActionPerformed
+
+    private void showAssignmentDialogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showAssignmentDialogActionPerformed
+        // TODO add your handling code here:
+        AssignmentDialog.setLocationRelativeTo(null);
+        addAssignmentBtn.setVisible(true);
+        editAssignmentBtn.setVisible(false);
+        AssignmentDialog.setVisible(true);
+    }//GEN-LAST:event_showAssignmentDialogActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1140,7 +1138,6 @@ public class TeacherPanel extends javax.swing.JPanel {
     private javax.swing.JRadioButton rdFemale;
     private javax.swing.JRadioButton rdMale;
     private javax.swing.JButton showAssignmentDialog;
-    private javax.swing.JButton showEditAssignmentDialog;
     private javax.swing.JComboBox<String> subjectCombobox;
     private javax.swing.JTable teacherList;
     private javax.swing.JTable teachingAssignmentList;
