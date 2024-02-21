@@ -138,7 +138,7 @@ public class MarkDAO extends DatabaseConnection {
             pstm.setFloat(4, mark.getMark_45());
             pstm.setFloat(5, mark.getMark_end());
             pstm.setFloat(6, mark.getMark_avg());
-            pstm.setInt(7, hk);
+            pstm.setInt(9, hk);
             int n = pstm.executeUpdate();
             if (n > 0) {
                 result = true;

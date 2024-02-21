@@ -45,6 +45,11 @@ public class ClassBUS {
         return classDAO.editClass(class1);
     }
 
+
+    public boolean changeClass(String from, String to) {
+        return classDAO.changeClass(from, to);
+    }
+
     public Class getClassByID(String classID) {
         for (Class class1 : classDAO.getAllClass()) {
             if (class1.getClassID().equals(classID)) {

@@ -68,7 +68,7 @@ public class ClassDAO extends DatabaseConnection {
     public boolean editClass(Class class1) {
         Boolean result = false;
         open();
-        String sql = "UPDATE Class SET Class_Name = ?, Grade_Name = ?, Quantity = ?, SchoolYear_ID = ?, Teacher_ID = ?  WHERE Class_ID = ?";
+        String sql = "UPDATE Class SET Class_Name = ?, Grade_ID  = ?, Quantity = ?, SchoolYear_ID = ?, Teacher_ID = ?  WHERE Class_ID = ?";
         try {
             PreparedStatement pstm = conn.prepareStatement(sql);
             pstm.setString(1, class1.getClassName());
@@ -192,6 +192,22 @@ public class ClassDAO extends DatabaseConnection {
             int n = pstm.executeUpdate();
             return n > 0;
         } 
+        catch (Exception e) {
+            System.out.println("Error: " + e.toString());
+        }
+        return false;
+    }
+
+    public boolean changeClass(String from, String to) {
+        try {
+            open();
+            String sql = "UPDATE [Student] SET  Class_ID = ? WHERE Class_ID = ?";
+            PreparedStatement pstm = conn.prepareStatement(sql);
+            pstm.setString(1, to);
+            pstm.setString(2, from);
+            int n = pstm.executeUpdate();
+            return n > 0;
+        }
         catch (Exception e) {
             System.out.println("Error: " + e.toString());
         }

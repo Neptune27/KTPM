@@ -71,6 +71,8 @@ public class StudentResultPanel extends javax.swing.JPanel {
             loadDataStudentTable(uID, classID, "1");
         }
 
+        jPanel10.setVisible(false);
+
     }
 
     public void addOptionToHKCBox() {

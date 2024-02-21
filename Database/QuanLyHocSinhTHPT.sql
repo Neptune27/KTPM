@@ -1,13 +1,7 @@
 ﻿USE [master]
 GO
-/****** Object:  Database [SMS]    Script Date: 2/19/2024 17:25:06 ******/
+/****** Object:  Database [SMS]    Script Date: 2/21/2024 09:33:31 ******/
 CREATE DATABASE [SMS]
-    CONTAINMENT = NONE
-    ON  PRIMARY
-    ( NAME = N'SMS', FILENAME = N'/var/opt/mssql/data/SMS.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
-    LOG ON
-    ( NAME = N'SMS_log', FILENAME = N'/var/opt/mssql/data/SMS_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
-WITH CATALOG_COLLATION = DATABASE_DEFAULT, LEDGER = OFF
 GO
 ALTER DATABASE [SMS] SET COMPATIBILITY_LEVEL = 150
 GO
@@ -82,7 +76,7 @@ ALTER DATABASE [SMS] SET QUERY_STORE = OFF
 GO
 USE [SMS]
 GO
-/****** Object:  Table [dbo].[AcademicLevel]    Script Date: 2/19/2024 17:25:06 ******/
+/****** Object:  Table [dbo].[AcademicLevel]    Script Date: 2/21/2024 09:33:31 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -99,7 +93,7 @@ CREATE TABLE [dbo].[AcademicLevel](
                                               )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[AcademicResult]    Script Date: 2/19/2024 17:25:06 ******/
+/****** Object:  Table [dbo].[AcademicResult]    Script Date: 2/21/2024 09:33:32 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -113,7 +107,7 @@ CREATE TABLE [dbo].[AcademicResult](
                                                )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Class]    Script Date: 2/19/2024 17:25:06 ******/
+/****** Object:  Table [dbo].[Class]    Script Date: 2/21/2024 09:33:32 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -131,7 +125,7 @@ CREATE TABLE [dbo].[Class](
                                       )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Conduct]    Script Date: 2/19/2024 17:25:06 ******/
+/****** Object:  Table [dbo].[Conduct]    Script Date: 2/21/2024 09:33:32 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -145,7 +139,7 @@ CREATE TABLE [dbo].[Conduct](
                                         )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Discipline]    Script Date: 2/19/2024 17:25:06 ******/
+/****** Object:  Table [dbo].[Discipline]    Script Date: 2/21/2024 09:33:32 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -156,7 +150,7 @@ CREATE TABLE [dbo].[Discipline](
                                    [Dis_Score] [float] NULL
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Discliprorole]    Script Date: 2/19/2024 17:25:06 ******/
+/****** Object:  Table [dbo].[Discliprorole]    Script Date: 2/21/2024 09:33:32 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -166,7 +160,7 @@ CREATE TABLE [dbo].[Discliprorole](
                                       [Role_Content] [nvarchar](255) NULL
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Function]    Script Date: 2/19/2024 17:25:06 ******/
+/****** Object:  Table [dbo].[Function]    Script Date: 2/21/2024 09:33:32 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -181,7 +175,7 @@ CREATE TABLE [dbo].[Function](
                                          )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Grade]    Script Date: 2/19/2024 17:25:06 ******/
+/****** Object:  Table [dbo].[Grade]    Script Date: 2/21/2024 09:33:32 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -195,7 +189,7 @@ CREATE TABLE [dbo].[Grade](
                                       )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Permission_Detail]    Script Date: 2/19/2024 17:25:06 ******/
+/****** Object:  Table [dbo].[Permission_Detail]    Script Date: 2/21/2024 09:33:32 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -211,7 +205,7 @@ CREATE TABLE [dbo].[Permission_Detail](
                                                   )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Result]    Script Date: 2/19/2024 17:25:06 ******/
+/****** Object:  Table [dbo].[Result]    Script Date: 2/21/2024 09:33:32 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -224,7 +218,7 @@ CREATE TABLE [dbo].[Result](
                                [Result] [nvarchar](max) NOT NULL
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Role]    Script Date: 2/19/2024 17:25:06 ******/
+/****** Object:  Table [dbo].[Role]    Script Date: 2/21/2024 09:33:32 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -239,7 +233,7 @@ CREATE TABLE [dbo].[Role](
                                      )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[SchoolYear]    Script Date: 2/19/2024 17:25:06 ******/
+/****** Object:  Table [dbo].[SchoolYear]    Script Date: 2/21/2024 09:33:32 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -255,7 +249,7 @@ CREATE TABLE [dbo].[SchoolYear](
                                            )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Semester]    Script Date: 2/19/2024 17:25:06 ******/
+/****** Object:  Table [dbo].[Semester]    Script Date: 2/21/2024 09:33:32 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -272,7 +266,7 @@ CREATE TABLE [dbo].[Semester](
                                          )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Student]    Script Date: 2/19/2024 17:25:06 ******/
+/****** Object:  Table [dbo].[Student]    Script Date: 2/21/2024 09:33:32 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -294,7 +288,7 @@ CREATE TABLE [dbo].[Student](
                                         )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Student_Dis_Result]    Script Date: 2/19/2024 17:25:06 ******/
+/****** Object:  Table [dbo].[Student_Dis_Result]    Script Date: 2/21/2024 09:33:32 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -306,7 +300,7 @@ CREATE TABLE [dbo].[Student_Dis_Result](
                                            [Result] [nvarchar](max) NOT NULL
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Student_Mark_Subject]    Script Date: 2/19/2024 17:25:06 ******/
+/****** Object:  Table [dbo].[Student_Mark_Subject]    Script Date: 2/21/2024 09:33:32 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -324,7 +318,7 @@ CREATE TABLE [dbo].[Student_Mark_Subject](
                                              [HK] [int] NULL
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Subject]    Script Date: 2/19/2024 17:25:06 ******/
+/****** Object:  Table [dbo].[Subject]    Script Date: 2/21/2024 09:33:32 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -340,7 +334,7 @@ CREATE TABLE [dbo].[Subject](
                                         )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Teacher]    Script Date: 2/19/2024 17:25:06 ******/
+/****** Object:  Table [dbo].[Teacher]    Script Date: 2/21/2024 09:33:32 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -362,7 +356,7 @@ CREATE TABLE [dbo].[Teacher](
                                         )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[TeachingAssignment]    Script Date: 2/19/2024 17:25:06 ******/
+/****** Object:  Table [dbo].[TeachingAssignment]    Script Date: 2/21/2024 09:33:32 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -381,7 +375,7 @@ CREATE TABLE [dbo].[TeachingAssignment](
                                                    )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[User]    Script Date: 2/19/2024 17:25:06 ******/
+/****** Object:  Table [dbo].[User]    Script Date: 2/21/2024 09:33:32 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -399,11 +393,11 @@ CREATE TABLE [dbo].[User](
 GO
 INSERT [dbo].[Class] ([Class_ID], [Class_Name], [Grade_ID], [Quantity], [SchoolYear_ID], [Teacher_ID]) VALUES (N'LOP10A1_1920', N'Lớp 10A1', N'KHOI10', -1, N'NH1920', N'T001')
 GO
-INSERT [dbo].[Class] ([Class_ID], [Class_Name], [Grade_ID], [Quantity], [SchoolYear_ID], [Teacher_ID]) VALUES (N'LOP10A1_2021', N'Lớp 10A1', N'KHOI10', 3, N'NH2021', N'T004')
+INSERT [dbo].[Class] ([Class_ID], [Class_Name], [Grade_ID], [Quantity], [SchoolYear_ID], [Teacher_ID]) VALUES (N'LOP10A1_2021', N'Lớp 10A1', N'KHOI10', 3, N'NH2021', N'T001')
 GO
 INSERT [dbo].[Class] ([Class_ID], [Class_Name], [Grade_ID], [Quantity], [SchoolYear_ID], [Teacher_ID]) VALUES (N'LOP10A2_1920', N'Lớp 10A2', N'KHOI10', 0, N'NH1920', N'T011')
 GO
-INSERT [dbo].[Class] ([Class_ID], [Class_Name], [Grade_ID], [Quantity], [SchoolYear_ID], [Teacher_ID]) VALUES (N'LOP10A2_2021', N'Lớp 10A2', N'KHOI10', 1, N'NH2021', N'T005')
+INSERT [dbo].[Class] ([Class_ID], [Class_Name], [Grade_ID], [Quantity], [SchoolYear_ID], [Teacher_ID]) VALUES (N'LOP10A2_2021', N'Lớp 10A2', N'KHOI10', 1, N'NH2021', N'T006')
 GO
 INSERT [dbo].[Class] ([Class_ID], [Class_Name], [Grade_ID], [Quantity], [SchoolYear_ID], [Teacher_ID]) VALUES (N'LOP11A1_1920', N'Lớp 11A1', N'KHOI11', 0, N'NH1920', N'T002')
 GO
@@ -412,6 +406,8 @@ GO
 INSERT [dbo].[Class] ([Class_ID], [Class_Name], [Grade_ID], [Quantity], [SchoolYear_ID], [Teacher_ID]) VALUES (N'LOP11A2', N'Lớp 11A2', N'KHOI11', 0, N'NH1920', N'T004')
 GO
 INSERT [dbo].[Class] ([Class_ID], [Class_Name], [Grade_ID], [Quantity], [SchoolYear_ID], [Teacher_ID]) VALUES (N'LOP12A1_1920', N'Lớp 12A1', N'KHOI12', 0, N'NH1920', N'T003')
+GO
+INSERT [dbo].[Class] ([Class_ID], [Class_Name], [Grade_ID], [Quantity], [SchoolYear_ID], [Teacher_ID]) VALUES (N'VNH2021', N'V', N'KHOI10', 3, N'NH2021', N'T001')
 GO
 INSERT [dbo].[Discipline] ([Dis_ID], [Dis_Content], [Dis_Score]) VALUES (N'I.2       ', N'ĐIểm trung bình chung trên 8 điểm', 12)
 GO
@@ -583,11 +579,17 @@ INSERT [dbo].[Student] ([Student_ID], [Student_Name], [Date_Of_Birth], [Gender],
 GO
 INSERT [dbo].[Student] ([Student_ID], [Student_Name], [Date_Of_Birth], [Gender], [Phone], [Email], [Address], [Status], [Image], [Class_ID]) VALUES (N'HS011', N'123', CAST(N'2023-11-30' AS Date), N'Nam', N'123123123', N'123123123123', N'123123eqweqwe', 0, N'addIcon.png', N'LOP10A1_2021')
 GO
-INSERT [dbo].[Student] ([Student_ID], [Student_Name], [Date_Of_Birth], [Gender], [Phone], [Email], [Address], [Status], [Image], [Class_ID]) VALUES (N'HS12', N'c', CAST(N'2023-11-15' AS Date), N'Nam', N'1', N'hocSinh5@gmail.com', N'c', 0, N'NO AVATAR', N'LOP10A2_2021')
+INSERT [dbo].[Student] ([Student_ID], [Student_Name], [Date_Of_Birth], [Gender], [Phone], [Email], [Address], [Status], [Image], [Class_ID]) VALUES (N'HS12', N'Võ Minh Trí', CAST(N'2023-11-15' AS Date), N'Nam', N'1', N'hocSinh5@gmail.com', N'c', 0, N'NO AVATAR', N'LOP10A1_2021')
 GO
 INSERT [dbo].[Student_Dis_Result] ([Student_ID], [Student_Name], [Score], [Result]) VALUES (N'HS007', N'HOjc sinh 4', 17, N'Yếu')
 GO
-INSERT [dbo].[Student_Mark_Subject] ([std_id], [std_name], [teacher_id], [Mark_1], [Mark_2], [Mark_15], [Mark_45], [Mark_end], [Mark_avg], [HK]) VALUES (N'HS006', N'Hocj Sinh', N'T001', 3, 3, 3, 3, 3, 3, NULL)
+INSERT [dbo].[Student_Mark_Subject] ([std_id], [std_name], [teacher_id], [Mark_1], [Mark_2], [Mark_15], [Mark_45], [Mark_end], [Mark_avg], [HK]) VALUES (N'HS006', N'Hocj Sinh', N'T001', 3, 3, 3, 3, 3, 3, 1)
+GO
+INSERT [dbo].[Student_Mark_Subject] ([std_id], [std_name], [teacher_id], [Mark_1], [Mark_2], [Mark_15], [Mark_45], [Mark_end], [Mark_avg], [HK]) VALUES (N'HS008', N'QuachQuy', N'T001', 1, 1, 1, 1, 1, 1, 1)
+GO
+INSERT [dbo].[Student_Mark_Subject] ([std_id], [std_name], [teacher_id], [Mark_1], [Mark_2], [Mark_15], [Mark_45], [Mark_end], [Mark_avg], [HK]) VALUES (N'HS008', N'QuachQuy', N'T001', 2, 1, 1, 1, 2, 1.5666667222976685, 2)
+GO
+INSERT [dbo].[Student_Mark_Subject] ([std_id], [std_name], [teacher_id], [Mark_1], [Mark_2], [Mark_15], [Mark_45], [Mark_end], [Mark_avg], [HK]) VALUES (N'HS007', N'HOjc sinh 4', N'T001', 10, 7, 2, 8, 5, 6.1666665077209473, 1)
 GO
 INSERT [dbo].[Subject] ([Subject_ID], [Subject_Name], [Coefficient], [Number_Of_Lesson]) VALUES (N'MH001', N'Toán', 2, 45)
 GO
@@ -637,15 +639,11 @@ INSERT [dbo].[Teacher] ([Teacher_ID], [Teacher_Name], [Date_Of_Birth], [Gender],
 GO
 INSERT [dbo].[Teacher] ([Teacher_ID], [Teacher_Name], [Date_Of_Birth], [Gender], [Phone], [Email], [Address], [Status], [Image], [Subject_ID]) VALUES (N'T06', N'Lý Thị K', CAST(N'1989-04-23' AS Date), N'Nữ', N'3334445556', N'lythik@example.com', N'777 Đường K', 1, N'1.png', N'MH003')
 GO
-INSERT [dbo].[TeachingAssignment] ([Assignment_ID], [Teacher_ID], [Class_ID], [Subject_ID], [SchoolYear_ID], [Day_Of_Week], [Period]) VALUES (N'PC001', N'T001', N'LOP10A1_2021', N'MH001', N'NH1920', NULL, NULL)
+INSERT [dbo].[TeachingAssignment] ([Assignment_ID], [Teacher_ID], [Class_ID], [Subject_ID], [SchoolYear_ID], [Day_Of_Week], [Period]) VALUES (N'PC1', N'T001', N'LOP10A1_2021', N'MH001', N'NH1920', NULL, NULL)
 GO
-INSERT [dbo].[TeachingAssignment] ([Assignment_ID], [Teacher_ID], [Class_ID], [Subject_ID], [SchoolYear_ID], [Day_Of_Week], [Period]) VALUES (N'PC002', N'T002', N'LOP10A1_2021', N'MH002', N'NH1920', NULL, NULL)
+INSERT [dbo].[TeachingAssignment] ([Assignment_ID], [Teacher_ID], [Class_ID], [Subject_ID], [SchoolYear_ID], [Day_Of_Week], [Period]) VALUES (N'PC3', N'T001', N'LOP10A2_2021', N'MH001', N'NH1920', NULL, NULL)
 GO
-INSERT [dbo].[TeachingAssignment] ([Assignment_ID], [Teacher_ID], [Class_ID], [Subject_ID], [SchoolYear_ID], [Day_Of_Week], [Period]) VALUES (N'PC003', N'T003', N'LOP10A1_2021', N'MH003', N'NH1920', NULL, NULL)
-GO
-INSERT [dbo].[TeachingAssignment] ([Assignment_ID], [Teacher_ID], [Class_ID], [Subject_ID], [SchoolYear_ID], [Day_Of_Week], [Period]) VALUES (N'PC004', N'T002', N'LOP11A2', N'MH002', N'NH1920', NULL, NULL)
-GO
-INSERT [dbo].[TeachingAssignment] ([Assignment_ID], [Teacher_ID], [Class_ID], [Subject_ID], [SchoolYear_ID], [Day_Of_Week], [Period]) VALUES (N'PC005', N'T004', N'LOP11A2', N'MH004', N'NH1920', NULL, NULL)
+INSERT [dbo].[TeachingAssignment] ([Assignment_ID], [Teacher_ID], [Class_ID], [Subject_ID], [SchoolYear_ID], [Day_Of_Week], [Period]) VALUES (N'PC4', N'T001', N'LOP11A1_2021', N'MH001', N'NH1920', NULL, NULL)
 GO
 INSERT [dbo].[User] ([User_ID], [Username], [Password], [Role_ID]) VALUES (N'T001', N'QuachQuy', N'123456', N'RL001')
 GO

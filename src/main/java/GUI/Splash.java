@@ -106,14 +106,14 @@ public class Splash extends javax.swing.JFrame {
     public static void main(String args[]) {
         Splash mySplash = new Splash();
         mySplash.setVisible(true);
-//        try {
-//            for (int i = 0; i < 100; i++) {
-//                Thread.sleep(20);
-//                mySplash.myProgressBar.setValue(i);
-//            }
-//        } catch (Exception e) {
-//
-//        }
+        try {
+            for (int i = 0; i < 100; i++) {
+                Thread.sleep(5);
+                mySplash.myProgressBar.setValue(i);
+            }
+        } catch (Exception e) {
+
+        }
         new LoginGUI().setVisible(true);
         mySplash.dispose();
     }
