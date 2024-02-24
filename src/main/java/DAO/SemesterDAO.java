@@ -32,7 +32,7 @@ public class SemesterDAO extends DatabaseConnection {
             }
             return semesterList;
         } catch (SQLException ex) {
-            System.out.println("Lỗi");
+            ex.printStackTrace();
         } finally {
             close();
         }

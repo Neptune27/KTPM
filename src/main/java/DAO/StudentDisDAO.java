@@ -31,8 +31,7 @@ public class StudentDisDAO extends DatabaseConnection {
             }
             return studentDisList;
         } catch (SQLException ex) {
-            System.out.print("Loi o day");
-            System.out.println("Lỗi");
+            ex.printStackTrace();
         } finally {
             close();
         }

@@ -30,7 +30,7 @@ public class DiscliproroleDAO extends DatabaseConnection {
             }
             return DiscliproroleList;
         } catch (SQLException ex) {
-            System.out.println("Lỗi");
+            ex.printStackTrace();
         } finally {
             close();
         }

@@ -36,7 +36,7 @@ public class PermissionDetailDAO extends DatabaseConnection {
             }
             return permissionDetailList;
         } catch (SQLException ex) {
-            System.out.println("Lỗi");
+            ex.printStackTrace();
         } finally {
             close();
         }
@@ -60,7 +60,7 @@ public class PermissionDetailDAO extends DatabaseConnection {
             }
             return permissionDetail;
         } catch (SQLException ex) {
-            System.out.println("Lỗi");
+            ex.printStackTrace();
         } finally {
             close();
         }
@@ -193,7 +193,7 @@ public class PermissionDetailDAO extends DatabaseConnection {
             }
 
         } catch (SQLException ex) {
-            System.out.println("Lỗi");
+            ex.printStackTrace();
         } finally {
             close();
         }

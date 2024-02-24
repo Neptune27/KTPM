@@ -11,7 +11,6 @@ import java.sql.*;
 public class MarkDAO extends DatabaseConnection {
 
     public ArrayList<Mark> getAllMark() {
-        System.out.println("Hay ở đây");
         ArrayList<Mark> markList = new ArrayList<Mark>();
         open();
         try {
@@ -33,7 +32,7 @@ public class MarkDAO extends DatabaseConnection {
                 markList.add(mark);
             }
         } catch (SQLException ex) {
-            System.out.println("Lỗi");
+            ex.printStackTrace();
         } finally {
             close();
         }

@@ -38,7 +38,6 @@ public class TeachingAssignmentBUS {
             System.out.println(TeacherID);
             if (teachingAssignment.getTeacherID().equals(TeacherID)) {
                 {
-                    System.out.println("Vao day di");
                     teachList.add(teachingAssignment);
                 }
             }

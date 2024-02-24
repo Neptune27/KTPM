@@ -31,7 +31,7 @@ public class RoleDAO extends DatabaseConnection {
             }
             return roleList;
         } catch (SQLException ex) {
-            System.out.println("Lỗi");
+            ex.printStackTrace();
         } finally {
             close();
         }

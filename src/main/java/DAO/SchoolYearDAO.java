@@ -39,7 +39,7 @@ public class SchoolYearDAO extends DatabaseConnection {
             }
             return schoolYearList;
         } catch (SQLException ex) {
-            System.out.println("Lỗi");
+            ex.printStackTrace();
         } finally {
             close();
         }

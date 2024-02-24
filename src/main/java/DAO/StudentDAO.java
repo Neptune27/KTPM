@@ -24,7 +24,7 @@ public class StudentDAO extends DatabaseConnection {
             }
             return studentList;
         } catch (SQLException ex) {
-            System.out.println("Lỗi");
+            ex.printStackTrace();
         } finally {
             close();
         }
@@ -113,7 +113,7 @@ public class StudentDAO extends DatabaseConnection {
             rs.next();
             return createStudentByResultSet(rs);
         } catch (SQLException ex) {
-            System.out.println("Lỗi");
+            ex.printStackTrace();
         } finally {
             close();
         }

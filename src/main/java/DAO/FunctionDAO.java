@@ -32,7 +32,7 @@ public class FunctionDAO extends DatabaseConnection{
             }
             return functionList;
         } catch (SQLException ex) {
-            System.out.println("Lỗi");
+            ex.printStackTrace();
         } finally {
             close();
         }

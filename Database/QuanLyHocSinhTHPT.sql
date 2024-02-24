@@ -1,6 +1,6 @@
 ﻿USE [master]
 GO
-/****** Object:  Database [SMS]    Script Date: 2/21/2024 09:33:31 ******/
+/****** Object:  Database [SMS]    Script Date: 2/24/2024 20:30:09 ******/
 CREATE DATABASE [SMS]
 GO
 ALTER DATABASE [SMS] SET COMPATIBILITY_LEVEL = 150
@@ -76,7 +76,7 @@ ALTER DATABASE [SMS] SET QUERY_STORE = OFF
 GO
 USE [SMS]
 GO
-/****** Object:  Table [dbo].[AcademicLevel]    Script Date: 2/21/2024 09:33:31 ******/
+/****** Object:  Table [dbo].[AcademicLevel]    Script Date: 2/24/2024 20:30:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -93,7 +93,7 @@ CREATE TABLE [dbo].[AcademicLevel](
                                               )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[AcademicResult]    Script Date: 2/21/2024 09:33:32 ******/
+/****** Object:  Table [dbo].[AcademicResult]    Script Date: 2/24/2024 20:30:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -107,7 +107,7 @@ CREATE TABLE [dbo].[AcademicResult](
                                                )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Class]    Script Date: 2/21/2024 09:33:32 ******/
+/****** Object:  Table [dbo].[Class]    Script Date: 2/24/2024 20:30:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -125,7 +125,7 @@ CREATE TABLE [dbo].[Class](
                                       )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Conduct]    Script Date: 2/21/2024 09:33:32 ******/
+/****** Object:  Table [dbo].[Conduct]    Script Date: 2/24/2024 20:30:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -139,7 +139,7 @@ CREATE TABLE [dbo].[Conduct](
                                         )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Discipline]    Script Date: 2/21/2024 09:33:32 ******/
+/****** Object:  Table [dbo].[Discipline]    Script Date: 2/24/2024 20:30:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -150,7 +150,7 @@ CREATE TABLE [dbo].[Discipline](
                                    [Dis_Score] [float] NULL
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Discliprorole]    Script Date: 2/21/2024 09:33:32 ******/
+/****** Object:  Table [dbo].[Discliprorole]    Script Date: 2/24/2024 20:30:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -160,7 +160,7 @@ CREATE TABLE [dbo].[Discliprorole](
                                       [Role_Content] [nvarchar](255) NULL
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Function]    Script Date: 2/21/2024 09:33:32 ******/
+/****** Object:  Table [dbo].[Function]    Script Date: 2/24/2024 20:30:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -175,7 +175,7 @@ CREATE TABLE [dbo].[Function](
                                          )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Grade]    Script Date: 2/21/2024 09:33:32 ******/
+/****** Object:  Table [dbo].[Grade]    Script Date: 2/24/2024 20:30:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -189,7 +189,7 @@ CREATE TABLE [dbo].[Grade](
                                       )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Permission_Detail]    Script Date: 2/21/2024 09:33:32 ******/
+/****** Object:  Table [dbo].[Permission_Detail]    Script Date: 2/24/2024 20:30:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -205,7 +205,7 @@ CREATE TABLE [dbo].[Permission_Detail](
                                                   )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Result]    Script Date: 2/21/2024 09:33:32 ******/
+/****** Object:  Table [dbo].[Result]    Script Date: 2/24/2024 20:30:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -218,7 +218,7 @@ CREATE TABLE [dbo].[Result](
                                [Result] [nvarchar](max) NOT NULL
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Role]    Script Date: 2/21/2024 09:33:32 ******/
+/****** Object:  Table [dbo].[Role]    Script Date: 2/24/2024 20:30:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -233,7 +233,7 @@ CREATE TABLE [dbo].[Role](
                                      )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[SchoolYear]    Script Date: 2/21/2024 09:33:32 ******/
+/****** Object:  Table [dbo].[SchoolYear]    Script Date: 2/24/2024 20:30:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -249,7 +249,7 @@ CREATE TABLE [dbo].[SchoolYear](
                                            )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Semester]    Script Date: 2/21/2024 09:33:32 ******/
+/****** Object:  Table [dbo].[Semester]    Script Date: 2/24/2024 20:30:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -266,7 +266,7 @@ CREATE TABLE [dbo].[Semester](
                                          )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Student]    Script Date: 2/21/2024 09:33:32 ******/
+/****** Object:  Table [dbo].[Student]    Script Date: 2/24/2024 20:30:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -288,7 +288,7 @@ CREATE TABLE [dbo].[Student](
                                         )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Student_Dis_Result]    Script Date: 2/21/2024 09:33:32 ******/
+/****** Object:  Table [dbo].[Student_Dis_Result]    Script Date: 2/24/2024 20:30:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -300,7 +300,7 @@ CREATE TABLE [dbo].[Student_Dis_Result](
                                            [Result] [nvarchar](max) NOT NULL
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Student_Mark_Subject]    Script Date: 2/21/2024 09:33:32 ******/
+/****** Object:  Table [dbo].[Student_Mark_Subject]    Script Date: 2/24/2024 20:30:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -318,7 +318,7 @@ CREATE TABLE [dbo].[Student_Mark_Subject](
                                              [HK] [int] NULL
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Subject]    Script Date: 2/21/2024 09:33:32 ******/
+/****** Object:  Table [dbo].[Subject]    Script Date: 2/24/2024 20:30:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -334,7 +334,7 @@ CREATE TABLE [dbo].[Subject](
                                         )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Teacher]    Script Date: 2/21/2024 09:33:32 ******/
+/****** Object:  Table [dbo].[Teacher]    Script Date: 2/24/2024 20:30:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -356,7 +356,7 @@ CREATE TABLE [dbo].[Teacher](
                                         )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[TeachingAssignment]    Script Date: 2/21/2024 09:33:32 ******/
+/****** Object:  Table [dbo].[TeachingAssignment]    Script Date: 2/24/2024 20:30:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -375,7 +375,7 @@ CREATE TABLE [dbo].[TeachingAssignment](
                                                    )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[User]    Script Date: 2/21/2024 09:33:32 ******/
+/****** Object:  Table [dbo].[User]    Script Date: 2/24/2024 20:30:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -580,6 +580,86 @@ GO
 INSERT [dbo].[Student] ([Student_ID], [Student_Name], [Date_Of_Birth], [Gender], [Phone], [Email], [Address], [Status], [Image], [Class_ID]) VALUES (N'HS011', N'123', CAST(N'2023-11-30' AS Date), N'Nam', N'123123123', N'123123123123', N'123123eqweqwe', 0, N'addIcon.png', N'LOP10A1_2021')
 GO
 INSERT [dbo].[Student] ([Student_ID], [Student_Name], [Date_Of_Birth], [Gender], [Phone], [Email], [Address], [Status], [Image], [Class_ID]) VALUES (N'HS12', N'Võ Minh Trí', CAST(N'2023-11-15' AS Date), N'Nam', N'1', N'hocSinh5@gmail.com', N'c', 0, N'NO AVATAR', N'LOP10A1_2021')
+GO
+INSERT [dbo].[Student] ([Student_ID], [Student_Name], [Date_Of_Birth], [Gender], [Phone], [Email], [Address], [Status], [Image], [Class_ID]) VALUES (N'HS13', N'Khắc Duy Trịnh', CAST(N'2005-05-29' AS Date), N'Nam', N'389794911', N'7kongNghi96@hotmail.com', N'349 Đào Spring', 0, N'NO', N'LOP10A1_2021')
+GO
+INSERT [dbo].[Student] ([Student_ID], [Student_Name], [Date_Of_Birth], [Gender], [Phone], [Email], [Address], [Status], [Image], [Class_ID]) VALUES (N'HS14', N'Hương Lâm Ngô', CAST(N'2005-05-10' AS Date), N'Nam', N'314226412', N'MaiVy_Phan97@hotmail.com', N'340 Hương Mai Junctions', 0, N'NO', N'LOP10A1_2021')
+GO
+INSERT [dbo].[Student] ([Student_ID], [Student_Name], [Date_Of_Birth], [Gender], [Phone], [Email], [Address], [Status], [Image], [Class_ID]) VALUES (N'HS15', N'Đức Tài Vũ', CAST(N'2007-11-13' AS Date), N'Nam', N'316670340', N'BichPhuong.Mai@gmail.com', N'1851 Hoa Thiên Curve', 0, N'NO', N'LOP10A1_2021')
+GO
+INSERT [dbo].[Student] ([Student_ID], [Student_Name], [Date_Of_Birth], [Gender], [Phone], [Email], [Address], [Status], [Image], [Class_ID]) VALUES (N'HS16', N'Phương Anh Tô', CAST(N'2005-11-01' AS Date), N'Nữ', N'343307250', N'HoangNguyen_Ha@hotmail.com', N'1983 Hoài Trung Extension', 0, N'NO', N'LOP10A1_2021')
+GO
+INSERT [dbo].[Student] ([Student_ID], [Student_Name], [Date_Of_Birth], [Gender], [Phone], [Email], [Address], [Status], [Image], [Class_ID]) VALUES (N'HS17', N'Ngọc Nữ Trịnh', CAST(N'2006-11-19' AS Date), N'Nam', N'358970052', N'PhuongThuy_7ko46@yahoo.com', N'765 Phùng Ways', 0, N'NO', N'LOP10A1_2021')
+GO
+INSERT [dbo].[Student] ([Student_ID], [Student_Name], [Date_Of_Birth], [Gender], [Phone], [Email], [Address], [Status], [Image], [Class_ID]) VALUES (N'HS18', N'Gia Vinh Tô', CAST(N'2006-10-06' AS Date), N'Nam', N'351963046', N'TuyetVan85@gmail.com', N'483 Minh Thủy Square', 0, N'NO', N'LOP10A1_2021')
+GO
+INSERT [dbo].[Student] ([Student_ID], [Student_Name], [Date_Of_Birth], [Gender], [Phone], [Email], [Address], [Status], [Image], [Class_ID]) VALUES (N'HS19', N'Bảo Trân Lý', CAST(N'2007-05-09' AS Date), N'Nam', N'361995266', N'ThuTrang_7koan53@gmail.com', N'276 Hà Burg', 0, N'NO', N'LOP10A1_2021')
+GO
+INSERT [dbo].[Student] ([Student_ID], [Student_Name], [Date_Of_Birth], [Gender], [Phone], [Email], [Address], [Status], [Image], [Class_ID]) VALUES (N'HS20', N'Thạch Thảo Lý', CAST(N'2007-04-26' AS Date), N'Nam', N'337256837', N'TheTuong30@hotmail.com', N'98381 Anh Quân Loaf', 0, N'NO', N'LOP10A1_2021')
+GO
+INSERT [dbo].[Student] ([Student_ID], [Student_Name], [Date_Of_Birth], [Gender], [Phone], [Email], [Address], [Status], [Image], [Class_ID]) VALUES (N'HS21', N'Gia Hiệp Trần', CAST(N'2006-03-26' AS Date), N'Nữ', N'357208926', N'QuocHung.Nguyen@gmail.com', N'8811 Bảo Huệ Centers', 0, N'NO', N'LOP10A1_2021')
+GO
+INSERT [dbo].[Student] ([Student_ID], [Student_Name], [Date_Of_Birth], [Gender], [Phone], [Email], [Address], [Status], [Image], [Class_ID]) VALUES (N'HS22', N'Nam Việt Đào', CAST(N'2006-11-11' AS Date), N'Nam', N'398598485', N'Thuc7kinh.Tang@hotmail.com', N'84994 Nguyễn Street', 0, N'NO', N'LOP10A1_2021')
+GO
+INSERT [dbo].[Student] ([Student_ID], [Student_Name], [Date_Of_Birth], [Gender], [Phone], [Email], [Address], [Status], [Image], [Class_ID]) VALUES (N'HS23', N'Tuệ Lâm Trương', CAST(N'2008-01-01' AS Date), N'Nam', N'357768701', N'7kongPhuong.Ho@yahoo.com', N'404 Quang Lâm Ford', 0, N'NO', N'LOP10A1_2021')
+GO
+INSERT [dbo].[Student] ([Student_ID], [Student_Name], [Date_Of_Birth], [Gender], [Phone], [Email], [Address], [Status], [Image], [Class_ID]) VALUES (N'HS24', N'Anh Mai Phan', CAST(N'2005-09-02' AS Date), N'Nam', N'371005650', N'DuyThong13@hotmail.com', N'54085 Hải Vân Terrace', 0, N'NO', N'LOP10A1_2021')
+GO
+INSERT [dbo].[Student] ([Student_ID], [Student_Name], [Date_Of_Birth], [Gender], [Phone], [Email], [Address], [Status], [Image], [Class_ID]) VALUES (N'HS25', N'Anh Thi Hồ', CAST(N'2006-01-06' AS Date), N'Nam', N'367191982', N'TamKhanh.Hoang17@gmail.com', N'474 Xuân Thuyết Bypass', 0, N'NO', N'LOP10A1_2021')
+GO
+INSERT [dbo].[Student] ([Student_ID], [Student_Name], [Date_Of_Birth], [Gender], [Phone], [Email], [Address], [Status], [Image], [Class_ID]) VALUES (N'HS26', N'Mai Nhi Lâm', CAST(N'2007-03-25' AS Date), N'Nam', N'363900865', N'QuangNinh_To99@gmail.com', N'213 Đinh Plain', 0, N'NO', N'LOP10A1_2021')
+GO
+INSERT [dbo].[Student] ([Student_ID], [Student_Name], [Date_Of_Birth], [Gender], [Phone], [Email], [Address], [Status], [Image], [Class_ID]) VALUES (N'HS27', N'Hương Mai Đỗ', CAST(N'2006-10-20' AS Date), N'Nam', N'386455984', N'DanhThanh.Mai@gmail.com', N'3701 Bảo Ngọc Haven', 0, N'NO', N'LOP10A1_2021')
+GO
+INSERT [dbo].[Student] ([Student_ID], [Student_Name], [Date_Of_Birth], [Gender], [Phone], [Email], [Address], [Status], [Image], [Class_ID]) VALUES (N'HS28', N'Ái Linh Vũ', CAST(N'2005-08-30' AS Date), N'Nam', N'375564312', N'CamLinh1@yahoo.com', N'47241 Nguyên Hồng Fields', 0, N'NO', N'LOP10A1_2021')
+GO
+INSERT [dbo].[Student] ([Student_ID], [Student_Name], [Date_Of_Birth], [Gender], [Phone], [Email], [Address], [Status], [Image], [Class_ID]) VALUES (N'HS29', N'Vĩnh Hải Trương', CAST(N'2006-05-10' AS Date), N'Nam', N'343649395', N'ThienPhuoc_Ngo43@gmail.com', N'2363 Bùi Stream', 0, N'NO', N'LOP10A1_2021')
+GO
+INSERT [dbo].[Student] ([Student_ID], [Student_Name], [Date_Of_Birth], [Gender], [Phone], [Email], [Address], [Status], [Image], [Class_ID]) VALUES (N'HS30', N'Trí Dũng Bùi', CAST(N'2007-07-04' AS Date), N'Nam', N'337369559', N'TriMinh69@yahoo.com', N'164 Thơ Thơ Crescent', 0, N'NO', N'LOP10A1_2021')
+GO
+INSERT [dbo].[Student] ([Student_ID], [Student_Name], [Date_Of_Birth], [Gender], [Phone], [Email], [Address], [Status], [Image], [Class_ID]) VALUES (N'HS31', N'Bích Hằng Trương', CAST(N'2007-03-16' AS Date), N'Nam', N'323278504', N'ThatTho_Phan@hotmail.com', N'1560 Tăng Heights', 0, N'NO', N'LOP10A1_2021')
+GO
+INSERT [dbo].[Student] ([Student_ID], [Student_Name], [Date_Of_Birth], [Gender], [Phone], [Email], [Address], [Status], [Image], [Class_ID]) VALUES (N'HS32', N'Thiện Luân Đặng', CAST(N'2007-09-30' AS Date), N'Nữ', N'312182596', N'LeQuan_Mai77@hotmail.com', N'4302 Vương Haven', 0, N'NO', N'LOP10A1_2021')
+GO
+INSERT [dbo].[Student] ([Student_ID], [Student_Name], [Date_Of_Birth], [Gender], [Phone], [Email], [Address], [Status], [Image], [Class_ID]) VALUES (N'HS33', N'Xuân Sơn Lý', CAST(N'2007-02-22' AS Date), N'Nữ', N'388863195', N'PhuongNghi_Ly74@hotmail.com', N'8389 Thanh Hà Glens', 0, N'NO', N'LOP10A1_2021')
+GO
+INSERT [dbo].[Student] ([Student_ID], [Student_Name], [Date_Of_Birth], [Gender], [Phone], [Email], [Address], [Status], [Image], [Class_ID]) VALUES (N'HS34', N'Đan Tâm Hoàng', CAST(N'2007-09-14' AS Date), N'Nữ', N'328741961', N'AiThy.Lam@hotmail.com', N'2464 Hoàng Mai Trafficway', 0, N'NO', N'LOP10A1_2021')
+GO
+INSERT [dbo].[Student] ([Student_ID], [Student_Name], [Date_Of_Birth], [Gender], [Phone], [Email], [Address], [Status], [Image], [Class_ID]) VALUES (N'HS35', N'Thành Trung Dương', CAST(N'2005-04-01' AS Date), N'Nữ', N'352874051', N'DiemThu_Ly54@yahoo.com', N'234 Hồ Camp', 0, N'NO', N'LOP10A1_2021')
+GO
+INSERT [dbo].[Student] ([Student_ID], [Student_Name], [Date_Of_Birth], [Gender], [Phone], [Email], [Address], [Status], [Image], [Class_ID]) VALUES (N'HS36', N'Thế Dân Đào', CAST(N'2007-11-25' AS Date), N'Nữ', N'313516938', N'Quang7kat_Ho@hotmail.com', N'7685 Hà Tiên Mills', 0, N'NO', N'LOP10A1_2021')
+GO
+INSERT [dbo].[Student] ([Student_ID], [Student_Name], [Date_Of_Birth], [Gender], [Phone], [Email], [Address], [Status], [Image], [Class_ID]) VALUES (N'HS37', N'Kim Ngân Trịnh', CAST(N'2007-07-10' AS Date), N'Nữ', N'326065782', N'MinhQuoc56@hotmail.com', N'30001 Thùy Nhi Radial', 0, N'NO', N'LOP10A1_2021')
+GO
+INSERT [dbo].[Student] ([Student_ID], [Student_Name], [Date_Of_Birth], [Gender], [Phone], [Email], [Address], [Status], [Image], [Class_ID]) VALUES (N'HS38', N'Xuân Hãn Trương', CAST(N'2005-08-29' AS Date), N'Nữ', N'316145496', N'LanTruc_7koan71@gmail.com', N'312 Quang Thắng Bypass', 0, N'NO', N'LOP10A1_2021')
+GO
+INSERT [dbo].[Student] ([Student_ID], [Student_Name], [Date_Of_Birth], [Gender], [Phone], [Email], [Address], [Status], [Image], [Class_ID]) VALUES (N'HS39', N'Gia Phước Hà', CAST(N'2006-09-23' AS Date), N'Nữ', N'386501760', N'TanTruong75@hotmail.com', N'8804 Vũ Freeway', 0, N'NO', N'LOP10A1_2021')
+GO
+INSERT [dbo].[Student] ([Student_ID], [Student_Name], [Date_Of_Birth], [Gender], [Phone], [Email], [Address], [Status], [Image], [Class_ID]) VALUES (N'HS40', N'Thiều Ly Vương', CAST(N'2005-04-26' AS Date), N'Nam', N'329805746', N'QuangNhan_Ho@gmail.com', N'356 Công Hậu Spring', 0, N'NO', N'LOP10A1_2021')
+GO
+INSERT [dbo].[Student] ([Student_ID], [Student_Name], [Date_Of_Birth], [Gender], [Phone], [Email], [Address], [Status], [Image], [Class_ID]) VALUES (N'HS41', N'Quỳnh Liên Mai', CAST(N'2006-09-07' AS Date), N'Nữ', N'398140636', N'MinhHang_Ha77@yahoo.com', N'364 Hoàng Land', 0, N'NO', N'LOP10A1_2021')
+GO
+INSERT [dbo].[Student] ([Student_ID], [Student_Name], [Date_Of_Birth], [Gender], [Phone], [Email], [Address], [Status], [Image], [Class_ID]) VALUES (N'HS42', N'Quốc Đại Lê', CAST(N'2005-09-01' AS Date), N'Nữ', N'392048449', N'LanHuong73@hotmail.com', N'752 Thái Tân Fords', 0, N'NO', N'LOP10A1_2021')
+GO
+INSERT [dbo].[Student] ([Student_ID], [Student_Name], [Date_Of_Birth], [Gender], [Phone], [Email], [Address], [Status], [Image], [Class_ID]) VALUES (N'HS43', N'Mạnh Tường Tăng', CAST(N'2007-05-24' AS Date), N'Nam', N'315398218', N'TruongAn_Hoang@hotmail.com', N'5942 Bảo Quỳnh Ports', 0, N'NO', N'LOP10A1_2021')
+GO
+INSERT [dbo].[Student] ([Student_ID], [Student_Name], [Date_Of_Birth], [Gender], [Phone], [Email], [Address], [Status], [Image], [Class_ID]) VALUES (N'HS44', N'Minh Hương Đinh', CAST(N'2005-11-23' AS Date), N'Nữ', N'312790158', N'ThiThi1@gmail.com', N'44261 Hoàng Orchard', 0, N'NO', N'LOP10A1_2021')
+GO
+INSERT [dbo].[Student] ([Student_ID], [Student_Name], [Date_Of_Birth], [Gender], [Phone], [Email], [Address], [Status], [Image], [Class_ID]) VALUES (N'HS45', N'An Nhiên Trần', CAST(N'2006-12-30' AS Date), N'Nữ', N'344683641', N'KhanhVi_Phung0@gmail.com', N'39930 Tăng Points', 0, N'NO', N'LOP10A1_2021')
+GO
+INSERT [dbo].[Student] ([Student_ID], [Student_Name], [Date_Of_Birth], [Gender], [Phone], [Email], [Address], [Status], [Image], [Class_ID]) VALUES (N'HS46', N'Bách Du Trương', CAST(N'2006-03-26' AS Date), N'Nam', N'385429161', N'AnhTrang_Hoang@hotmail.com', N'948 Phan Avenue', 0, N'NO', N'LOP10A1_2021')
+GO
+INSERT [dbo].[Student] ([Student_ID], [Student_Name], [Date_Of_Birth], [Gender], [Phone], [Email], [Address], [Status], [Image], [Class_ID]) VALUES (N'HS47', N'Minh Khôi Lâm', CAST(N'2007-10-17' AS Date), N'Nam', N'323979894', N'DuyKinh51@gmail.com', N'1946 Trịnh Falls', 0, N'NO', N'LOP10A1_2021')
+GO
+INSERT [dbo].[Student] ([Student_ID], [Student_Name], [Date_Of_Birth], [Gender], [Phone], [Email], [Address], [Status], [Image], [Class_ID]) VALUES (N'HS48', N'Vương Gia Lâm', CAST(N'2007-03-09' AS Date), N'Nam', N'361811301', N'YenThao62@yahoo.com', N'71769 Yên Nhi Glens', 0, N'NO', N'LOP10A1_2021')
+GO
+INSERT [dbo].[Student] ([Student_ID], [Student_Name], [Date_Of_Birth], [Gender], [Phone], [Email], [Address], [Status], [Image], [Class_ID]) VALUES (N'HS49', N'Hà Liên Phùng', CAST(N'2007-06-25' AS Date), N'Nữ', N'355866768', N'NgocAi.Ho4@gmail.com', N'452 Viễn Cảnh Unions', 0, N'NO', N'LOP10A1_2021')
+GO
+INSERT [dbo].[Student] ([Student_ID], [Student_Name], [Date_Of_Birth], [Gender], [Phone], [Email], [Address], [Status], [Image], [Class_ID]) VALUES (N'HS50', N'Tấn Tài Phạm', CAST(N'2007-10-01' AS Date), N'Nam', N'367301321', N'AnhQuoc_Ly6@gmail.com', N'67827 Trương Course', 0, N'NO', N'LOP10A1_2021')
+GO
+INSERT [dbo].[Student] ([Student_ID], [Student_Name], [Date_Of_Birth], [Gender], [Phone], [Email], [Address], [Status], [Image], [Class_ID]) VALUES (N'HS51', N'Duy Minh Ngô', CAST(N'2006-09-13' AS Date), N'Nam', N'326698448', N'QuyVinh_7kinh@yahoo.com', N'1301 Hòa Hợp Meadow', 0, N'NO', N'LOP10A1_2021')
+GO
+INSERT [dbo].[Student] ([Student_ID], [Student_Name], [Date_Of_Birth], [Gender], [Phone], [Email], [Address], [Status], [Image], [Class_ID]) VALUES (N'HS52', N'Diệu Nga Tăng', CAST(N'2007-10-29' AS Date), N'Nam', N'361156331', N'GiaKhanh14@hotmail.com', N'8315 Bùi Manors', 0, N'NO', N'LOP10A1_2021')
 GO
 INSERT [dbo].[Student_Dis_Result] ([Student_ID], [Student_Name], [Score], [Result]) VALUES (N'HS007', N'HOjc sinh 4', 17, N'Yếu')
 GO

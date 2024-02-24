@@ -33,7 +33,7 @@ public class SubjectDAO extends DatabaseConnection {
             }
             return subjectList;
         } catch (SQLException ex) {
-            System.out.println("Lỗi");
+            ex.printStackTrace();
         } finally {
             close();
         }
